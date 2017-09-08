@@ -27,7 +27,7 @@ int main(int argc, char ** argv)
 	// Parameter Options
 
   String refHaps = "";
-  String excludeFromRef = "";
+  string excludeFromRef = "";
 	String haps = "", snps = "",removeSam="";
 	String outfile = "Minimac3.Output";
 	String format = "GT,DS";
