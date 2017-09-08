@@ -27,7 +27,7 @@ int main(int argc, char ** argv)
 	// Parameter Options
 
   String refHaps = "";
-  string excludeFromRef = "";
+  string includeFileName = ""; // File with names to include
 	String haps = "", snps = "",removeSam="";
 	String outfile = "Minimac3.Output";
 	String format = "GT,DS";
@@ -49,7 +49,7 @@ int main(int argc, char ** argv)
 	BEGIN_LONG_PARAMETERS(longParameterList)
 		LONG_PARAMETER_GROUP("Reference Haplotypes")
 		LONG_STRINGPARAMETER("refHaps", &refHaps)
-		LONG_STRINGPARAMETER("excludeFromRef", &excludeFromRef)
+		LONG_STRINGPARAMETER("includeFileName", &includeFileName)
 		LONG_PARAMETER("passOnly", &passOnly)
 		LONG_PARAMETER("rsid", &rsid)
 		LONG_PARAMETER_GROUP("Target Haplotypes")
@@ -367,8 +367,8 @@ int main(int argc, char ** argv)
     target.MyChromosome=(string)MyChromosome;
     reference.MyChromosome=(string)MyChromosome;
     reference.CPU=cpus;
-    reference.excludeFromRef=excludeFromRef;
     reference.Duplicates=duplicates;
+    reference.includeFileName=includeFileName;
 
 
 

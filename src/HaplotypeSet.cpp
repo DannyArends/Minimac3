@@ -1172,7 +1172,10 @@ bool HaplotypeSet::FasterLoadHaplotypes(String filename, int maxIndiv, int maxMa
 	VcfHeader header;
 	VcfRecord record;
 
-	if (!inFile.open(filename, header))
+  //Use the different open Function
+//	if (!inFile.open(filename, header))
+  cout << "Trying to read vcf file:" << filename<<"Using " << includeFileName << "specifying which samples to include" << endl;
+  if (!inFile.open(filename, header, includeFileName, NULL, NULL))
 	{
 		cout << "\n Program could NOT open file : " << filename << endl;
 		return false;
