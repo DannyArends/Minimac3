@@ -1238,6 +1238,8 @@ bool HaplotypeSet::FasterLoadHaplotypes(String filename, int maxIndiv, int maxMa
 	{
 		string tempName(header.getSampleName(i));
     cout << "\n[DANNY]" << tempName << endl;
+    string excludeFromRef = ""; // TEMP: replace this with what the user specified
+    
     if(tempName != excludeFromRef) {
       individualName.push_back(tempName);
     }
