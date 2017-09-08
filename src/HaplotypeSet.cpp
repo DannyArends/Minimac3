@@ -1242,6 +1242,7 @@ bool HaplotypeSet::FasterLoadHaplotypes(String filename, int maxIndiv, int maxMa
     
     if(tempName != excludeFromRef) {
       individualName.push_back(tempName);
+      numSamplesRead--;
     }
 	}
 
