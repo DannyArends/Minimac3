@@ -26,7 +26,8 @@ int PhoneHome::allThinning = 50;
 int PhoneHome::ourNumber = -1;
 
 bool PhoneHome::ourEnableCompletionStatus = false;
-std::string PhoneHome::ourBaseURL = "http://csgph.sph.umich.edu/ph/";
+// NOTE: This is very bad, sending information to an unencrypted URL, without mentioning it to the users or giving users a way to opt-out
+std::string PhoneHome::ourBaseURL = "http://localhost/";
 std::string PhoneHome::ourURL = ourBaseURL;
 char PhoneHome::ourPrefixChar = '?';
 String PhoneHome::ourReturnString = "";
