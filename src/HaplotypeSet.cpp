@@ -1234,7 +1234,7 @@ bool HaplotypeSet::FasterLoadHaplotypes(String filename, int maxIndiv, int maxMa
 		cout << " Program Aborting ... "<<endl;
 		return false;
     }
-    cout << "Number of Samples read from VCF File                : " << numSamplesRead << endl;
+    cout << " Number of Samples read from VCF File                : " << numSamplesRead << endl;
     individualName.clear();
 	for (int i = 0; i < numSamplesRead; i++)
 	{
