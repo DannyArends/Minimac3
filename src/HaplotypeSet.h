@@ -24,7 +24,7 @@ class HaplotypeSet
 		vector<int>        optEndPoints;
 		vector<int>        ScaffoldIndex;
 		vector<int>        UnScaffoldIndex;
-    string             includeFileName;
+    String             includeFileName;
 		vector<ReducedHaplotypeInfo> ReducedStructureInfo;
 		vector<vector<ReducedHaplotypeInfo> > ReducedStructureInfoBuffer;
 

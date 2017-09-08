@@ -27,7 +27,7 @@ int main(int argc, char ** argv)
 	// Parameter Options
 
   String refHaps = "";
-  string includeFileName = ""; // File with names to include
+  String includeFileName = ""; // File with names to include
 	String haps = "", snps = "",removeSam="";
 	String outfile = "Minimac3.Output";
 	String format = "GT,DS";
@@ -104,10 +104,6 @@ int main(int argc, char ** argv)
     if(log)
         LogFile=freopen(outfile+".logfile","w",stdout);
     dup2(fileno(stdout), fileno(stderr));
-    if(excludeFromRef != ""){
-      cout << "Going to exclude from ref:" << excludeFromRef << endl;
-    }
-
     Minimac3Version();
 	if (help)
 	{
