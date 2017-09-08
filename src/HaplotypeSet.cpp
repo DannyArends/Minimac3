@@ -1240,6 +1240,7 @@ bool HaplotypeSet::FasterLoadHaplotypes(String filename, int maxIndiv, int maxMa
 	for (int i = 0; i < numSamplesRead; i++)
 	{
 		string tempName(header.getSampleName(i));
+    cout << tempName << endl;
     individualName.push_back(tempName);
 	}
 
