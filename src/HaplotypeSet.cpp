@@ -954,6 +954,7 @@ bool HaplotypeSet::readm3vcfFile(String m3vcfFile,String CHR,int START,int END,i
 
 bool HaplotypeSet::CheckValidChrom(string chr)
 {
+    return(true); // Danny: Any chromosome name is valid
     bool result=false;
 
     if(MyChromosome!="" && chr==MyChromosome)
@@ -1236,6 +1237,7 @@ bool HaplotypeSet::FasterLoadHaplotypes(String filename, int maxIndiv, int maxMa
 	for (int i = 0; i < numSamplesRead; i++)
 	{
 		string tempName(header.getSampleName(i));
+    cout << "\n[DANNY]" << tempName << endl;
 		individualName.push_back(tempName);
 	}
 
