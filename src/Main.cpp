@@ -106,7 +106,6 @@ int main(int argc, char ** argv)
     dup2(fileno(stdout), fileno(stderr));
     if(excludeFromRef != ""){
       cout << "Going to exclude from ref:" << excludeFromRef << endl;
-            return(-1);
     }
 
     Minimac3Version();
@@ -368,6 +367,7 @@ int main(int argc, char ** argv)
     target.MyChromosome=(string)MyChromosome;
     reference.MyChromosome=(string)MyChromosome;
     reference.CPU=cpus;
+    reference.excludeFromRef=excludeFromRef;
     reference.Duplicates=duplicates;
 
 
