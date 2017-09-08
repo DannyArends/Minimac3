@@ -26,7 +26,8 @@ int main(int argc, char ** argv)
 {
 	// Parameter Options
 
-    String refHaps = "";
+  String refHaps = "";
+  String excludeFromRef = "";
 	String haps = "", snps = "",removeSam="";
 	String outfile = "Minimac3.Output";
 	String format = "GT,DS";
@@ -48,6 +49,7 @@ int main(int argc, char ** argv)
 	BEGIN_LONG_PARAMETERS(longParameterList)
 		LONG_PARAMETER_GROUP("Reference Haplotypes")
 		LONG_STRINGPARAMETER("refHaps", &refHaps)
+		LONG_STRINGPARAMETER("excludeFromRef", &excludeFromRef)
 		LONG_PARAMETER("passOnly", &passOnly)
 		LONG_PARAMETER("rsid", &rsid)
 		LONG_PARAMETER_GROUP("Target Haplotypes")
@@ -102,7 +104,10 @@ int main(int argc, char ** argv)
     if(log)
         LogFile=freopen(outfile+".logfile","w",stdout);
     dup2(fileno(stdout), fileno(stderr));
-
+    if(excludeFromRef != ""){
+      cout << "Going to exclude from ref:" << excludeFromRef << endl;
+            return(-1);
+    }
 
     Minimac3Version();
 	if (help)
